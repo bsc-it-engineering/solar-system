@@ -102,7 +102,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: .
-          push: flase
+          push: false
           tags: ${{ vars.DOCKERHUB_USERNAME }}/solar-system:${{ github.sha }}
 
       - name: Docker Image Test
