@@ -53,7 +53,7 @@ jobs:
 
       - name: Setup NodeJS Version - 18
         uses: actions/setup-node@v3
-        with
+        with:
           node-version: 18
 
       - name: Install Dependencies
