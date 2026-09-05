@@ -162,7 +162,10 @@ jobs:
 
     dev-deploy:
       needs: docker
-      runs-on: ubuntu-latest
+      runs-on:
+        - self-hosted
+        - Linux
+        - X64
       steps:
         - name: Checkout Repo
           uses: actions/checkout@v4
@@ -172,8 +175,14 @@ jobs:
           with:
             version: 'v1.26.0'
 
+        - name: Set Kubeconfig
+          uses: azure/k8s-set-context@v5
+          with:
+            method: kubeconfig
+            kubeconfig: ${{ secrets.KUBECONFIG }}
+
         - name: Fetch Kubernetes Cluster Details
           run: |
-            kubectl version --short
+            kubectl version
             echo ----------------------------------------------------------------
             kubectl get nodes
