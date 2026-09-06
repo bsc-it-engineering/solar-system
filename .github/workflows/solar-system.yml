@@ -234,7 +234,7 @@ jobs:
 
     integration-testing:
       name: Dev Integration Testing
-      needs: deb-deploy
+      needs: dev-deploy
       runs-on:
         - self-hosted
         - Linux
