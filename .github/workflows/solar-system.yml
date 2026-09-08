@@ -232,7 +232,7 @@ jobs:
             echo "APP_INGRESS_HOST=$(kubectl -n ${{ vars.NAMESPACE }} get ingress -o jsonpath="{.items[0].spec.tls[0].hosts[0]}")" >> "$GITHUB_OUTPUT"
 
     integration-testing:
-      name: Dev Integration Testing
+      name: Dev Integration Test
       needs: dev-deploy
       runs-on:
         - self-hosted
