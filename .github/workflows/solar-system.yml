@@ -131,7 +131,7 @@ jobs:
         - name: Upload to AWS S3
           uses: jakejarvis/s3-sync-action@master
           with:
-            args: --acl public-read --follow-symlinks --delete
+            args: --follow-symlinks --delete
           env:
             AWS_S3_BUCKET: solar-system-reports-bucket-195141147215-ap-east-2-an
             AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
